@@ -24,7 +24,7 @@ musica.loop = true;
 btnFoco.addEventListener('click', () => {
     alterarContexto('foco');
     btnFoco.classList.add('active');
-    tempoDecorridoEmSegundos = 1500;
+    tempoDecorridoEmSegundos = 10;
     mostrarTempo();
 })
 
@@ -80,8 +80,12 @@ let timer = () => {
     if (tempoDecorridoEmSegundos == 0) {
         audioFinzalizar.play();
         alert('Tempo Acabou!!');
+        const focoAtivo = html.getAttribute('data-contexto') == 'foco'
+        if(focoAtivo) {
+            const evento = new CustomEvent('FocoFinalizado')
+            document.dispatchEvent(evento)
+        }
         zerar();
-        location.reload();
         return
     }
 

@@ -16,7 +16,7 @@ let audioPause = new Audio('/sons/pause.mp3')
 let audioFinzalizar = new Audio('/sons/beep.mp3')
 
 //o readFile pode ser utilizado no meio do projeto, mas n e o melhor
-let tempoDecorridoEmSegundos = 1500;
+let tempoDecorridoEmSegundos = 25;
 let intervalo = null;
 
 musica.loop = true;
@@ -24,21 +24,21 @@ musica.loop = true;
 btnFoco.addEventListener('click', () => {
     alterarContexto('foco');
     btnFoco.classList.add('active');
-    tempoDecorridoEmSegundos = 10;
+    tempoDecorridoEmSegundos = 25;
     mostrarTempo();
 })
 
 btnDescansoCurto.addEventListener('click', () => {
     alterarContexto('descanso-curto');
     btnDescansoCurto.classList.add('active');
-    tempoDecorridoEmSegundos = 300;
+    tempoDecorridoEmSegundos = 5;
     mostrarTempo();
 })
 
 btnDescansoLongo.addEventListener('click', () => {
     alterarContexto('descanso-longo');
     btnDescansoLongo.classList.add('active');
-    tempoDecorridoEmSegundos = 900;
+    tempoDecorridoEmSegundos = 15;
     mostrarTempo();
 })
 

@@ -1,5 +1,6 @@
 //encontrar o botao adicionar tarefa
 const btnAdicionar = document.querySelector('.app__button--add-task');
+const btnCancelar = document.querySelector('.app__form-footer__button--cancel');
 const formAdicionar = document.querySelector('.app__form-add-task');
 const textArea = document.querySelector('.app__form-textarea');
 const ulTarefas = document.querySelector('.app__section-task-list');
@@ -80,6 +81,10 @@ function criarTarefa(conteudo) {
 }
 
 btnAdicionar.addEventListener('click', () => {
+    formAdicionar.classList.toggle('hidden')
+})
+
+btnCancelar.addEventListener('click', () => {
     formAdicionar.classList.toggle('hidden')
 })
 
